@@ -1,0 +1,7 @@
+{
+    "auto_delete_enabled": false,
+    "max_days": 14,
+    "max_gb": 10,
+    "check_interval_hours": 6.0,
+    "warning_threshold_pct": 85.0
+}
