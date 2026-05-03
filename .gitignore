@@ -1,0 +1,22 @@
+cat > .gitignore << 'EOF'
+# Python
+__pycache__/
+*.pyc
+venv/
+.env
+
+# Node / React Native
+node_modules/
+.expo/
+*.apk
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+*.key
+*.pem
+config/secrets.json
+EOF
