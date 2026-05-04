@@ -1,0 +1,18 @@
+# Web Server & API
+Flask>=3.0.0
+
+# Camera (Raspberry Pi)
+picamera2>=0.3.12
+
+# Computer Vision / Motion Detection
+opencv-python-headless>=4.8.0
+numpy>=1.24.0
+
+# MQTT Messaging
+paho-mqtt>=1.6.0
+
+# Push Notifications (Expo HTTP API or Firebase)
+requests>=2.31.0
+
+# Storage Manager (disk usage checks)
+psutil>=5.9.0
