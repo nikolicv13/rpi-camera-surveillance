@@ -210,6 +210,7 @@ This project implements a complete camera surveillance solution using a Raspberr
 + Cleanup when disk space is low
 + Configurable retention policies
 + Low storage alerts
+<img width="780" height="190" alt="Screenshot 2026-05-11 131148" src="https://github.com/user-attachments/assets/bf6ebebd-1b04-4c89-a67d-63cb9b85d123" />
 
 
 ### Recording Modes
