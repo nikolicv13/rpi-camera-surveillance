@@ -1,5 +1,8 @@
 # 📸 App Screenshots
 
+### Raspberry PI 4
+<img src="/docs/screenshots/RaspberryPI4.jpg" width="300" />
+
 ### ⚙️ Settings Panel
 <img src="/docs/screenshots/settings-1.png" width="300" />
 <img src="/docs/screenshots/settings-2.png" width="300" />
