@@ -144,44 +144,55 @@ This project implements a complete camera surveillance solution using a Raspberr
 ## API Endpoints
 
 ### 📸Camera Control
-```bash
-POST   /api/snapshot        Capture a snapshot
-POST   /api/record/start    Start recording
-POST   /api/record/stop     Stop recording
-GET    /api/status          Get camera status
-```
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/snapshot` | Capture a snapshot |
+| POST | `/api/record/start` | Start recording |
+| POST | `/api/record/stop` | Stop recording |
+| GET | `/api/status` | Get camera status |
+
+---
+
 
 ### 🎯Motion Detection
-```bash
-POST   /api/motion/start    Enable motion detection
-POST   /api/motion/stop     Disable motion detection
-POST   /api/motion/config   Update motion settings
-```
 
-### 📁File Management
-```bash
-GET     /api/files/snapshots              List snapshots
-GET     /api/files/videos                 List videos
-DELETE  /api/files/snapshot/:filename     Delete snapshot
-DELETE  /api/files/video/:filename        Delete video
-```
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/motion/start` | Enable motion detection |
+| POST | `/api/motion/stop` | Disable motion detection |
+| POST | `/api/motion/config` | Update motion settings |
+
+---
+
+### 📁 File Management
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/files/snapshots` | List snapshots |
+| GET | `/api/files/videos` | List videos |
+| DELETE | `/api/files/snapshot/:filename` | Delete snapshot |
+| DELETE | `/api/files/video/:filename` | Delete video |
+
+---
 
 ### 💾Storage
-```bash
-GET    /api/storage/status   Get disk usage
-POST   /api/storage/config   Update storage settings
-```
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/storage/status` | Get disk usage |
+| POST | `/api/storage/config` | Update storage settings |
+
+---
 
 ### 📡MQTT Topics
-```bash
-camera/command      Commands sent to camera
-camera/status       Status updates
-camera/motion       Motion detection events
-camera/recording    Recording state changes
-camera/snapshot     Snapshot events
-camera/storage      Storage warnings
-camera/heartbeat    Health checks
-```
+| Topic | Description |
+|---|---|
+| `camera/command` | Commands sent to camera |
+| `camera/status` | Status updates |
+| `camera/motion` | Motion detection events |
+| `camera/recording` | Recording state changes |
+| `camera/snapshot` | Snapshot events |
+| `camera/storage` | Storage warnings |
+| `camera/heartbeat` | Health checks |
 
 ---
 
