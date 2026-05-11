@@ -8,7 +8,7 @@ A full-stack IoT camera surveillance system built with Raspberry Pi and React Na
 This project implements a complete camera surveillance solution using a Raspberry Pi as the camera server and a React Native mobile application for remote monitoring and control. The system supports live video streaming, motion detection with automatic recording, snapshot capture, and intelligent storage management.
 
 
-## 📸 Preview
+##  Preview
 
 <p align="center">
   <img src="docs/screenshots/motionDetection.gif" height="500" alt="Live Streaming" />
