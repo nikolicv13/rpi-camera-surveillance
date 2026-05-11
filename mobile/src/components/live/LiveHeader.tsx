@@ -12,7 +12,7 @@ export function LiveHeader({ cameraIp, onSettingsPress }: Props) {
     <View style={styles.header}>
       <View style={styles.headerTopRow}>
         <View style={styles.headerTextContainer}>
-          <Text style={styles.title}>Veljko Camera</Text>
+          <Text style={styles.title}>Camera System</Text>
         </View>
 
         <TouchableOpacity

@@ -46,9 +46,6 @@ export const parseDatePath = (date_path: string, fallback_ts: number) => {
   };
 };
 
-/**
- * Group files into sections by day, chunked into rows for grid display
- */
 export const groupByDay = (
   files: FileInfo[],
   mode: GalleryTab,

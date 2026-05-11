@@ -12,7 +12,7 @@ interface Props {
 export function MotionDetectionSection({ settings, updateSetting }: Props) {
   return (
     <View style={styles.section}>
-      <Text style={styles.sectionTitle}>🏃 Motion Detection</Text>
+      <Text style={styles.sectionTitle}>Motion Detection</Text>
 
       {/* Enable/Disable */}
       <SettingRow

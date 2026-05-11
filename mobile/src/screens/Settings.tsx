@@ -41,7 +41,6 @@ export default function Settings({ onClose }: Props) {
 
   return (
     <>
-      {/* 👇 Add header with close button if onClose is provided */}
       {onClose && (
         <View style={styles.modalHeader}>
           <Text style={styles.modalTitle}>Settings</Text>

@@ -8,9 +8,6 @@ export { filesApi } from "./files";
 export { motionApi } from "./motion";
 export { storageApi } from "./storage";
 
-// ========== Backward-Compatible CameraAPI Object ==========
-// This maintains your existing import structure: import { CameraAPI } from "./api"
-
 import { cameraApi } from "./camera";
 import { recordingApi } from "./recording";
 import { filesApi } from "./files";
@@ -49,7 +46,6 @@ export const CameraAPI = {
   getStorageConfig: storageApi.getConfig,
   updateStorageConfig: storageApi.updateConfig,
 
-  // Legacy helper (if you had this)
   getFileUrl: (filename: string, type: "snapshot" | "video"): string => {
     return type === "snapshot"
       ? filesApi.getSnapshotUrl(filename)

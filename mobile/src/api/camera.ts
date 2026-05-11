@@ -3,9 +3,6 @@ import { fetchWithTimeout, handleApiError } from "./client";
 import { ApiResponse, CameraStatus, CameraConfigResponse } from "./types";
 
 export const cameraApi = {
-  /**
-   * Get current camera status
-   */
   getStatus: async (): Promise<{
     success: boolean;
     data?: CameraStatus;
@@ -33,9 +30,6 @@ export const cameraApi = {
     }
   },
 
-  /**
-   * Take a snapshot
-   */
   takeSnapshot: async (): Promise<ApiResponse> => {
     try {
       console.log("📷 Calling snapshot API...");
@@ -61,9 +55,6 @@ export const cameraApi = {
     }
   },
 
-  /**
-   * Get camera configuration
-   */
   getConfig: async (): Promise<CameraConfigResponse> => {
     try {
       const response = await fetchWithTimeout(
@@ -82,9 +73,6 @@ export const cameraApi = {
     }
   },
 
-  /**
-   * Update camera configuration
-   */
   updateConfig: async (config: {
     resolution?: string;
     bitrate?: number;

@@ -14,7 +14,6 @@ export interface LoadingState {
   motion: boolean;
 }
 
-// 👇 Add notification data types
 export interface NotificationData {
   type?: string;
   filename?: string;

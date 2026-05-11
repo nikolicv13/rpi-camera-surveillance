@@ -20,7 +20,7 @@ Notifications.setNotificationHandler({
     shouldSetBadge: true,
   }),
 });
-// ─── Set up Android notification channel ───
+
 const setupAndroidChannel = async () => {
   if (Platform.OS === "android") {
     await Notifications.setNotificationChannelAsync("camera-alerts", {
@@ -42,7 +42,6 @@ const setupAndroidChannel = async () => {
   }
 };
 
-// ─── Request permissions ───
 const requestNotificationPermissions = async (): Promise<boolean> => {
   if (!Device.isDevice) {
     console.log("[NOTIF] Not a real device, skipping permission request.");
@@ -67,10 +66,6 @@ const requestNotificationPermissions = async (): Promise<boolean> => {
   return true;
 };
 
-// ─── FIRE a local notification immediately ───
-// This is the core function. It creates a notification that appears
-// on the device right now, triggered by our own app code.
-
 export const showMotionNotification = async (): Promise<void> => {
   const prefs = await getNotificationPreferences();
 
@@ -90,7 +85,7 @@ export const showMotionNotification = async (): Promise<void> => {
       color: "#FF9800",
       priority: Notifications.AndroidNotificationPriority.HIGH,
     },
-    trigger: null, // null = show immediately
+    trigger: null,
   });
 
   console.log("[NOTIF] 📳 Motion notification shown");
@@ -163,17 +158,14 @@ export const getNotificationPreferences = async (): Promise<{
   return DEFAULT_PREFS;
 };
 
-// ─── Set up notification tap listeners ───
 export const setupNotificationListeners = (
   onNotificationReceived: (notification: Notifications.Notification) => void,
   onNotificationTapped: (response: Notifications.NotificationResponse) => void,
 ) => {
-  // Fired when notification arrives while app is OPEN
   const receivedListener = Notifications.addNotificationReceivedListener(
     onNotificationReceived,
   );
 
-  // Fired when user TAPS a notification
   const responseListener =
     Notifications.addNotificationResponseReceivedListener(onNotificationTapped);
 
@@ -207,18 +199,16 @@ export const showStorageWarningNotification = async (
       color: "#FF9800",
       priority: Notifications.AndroidNotificationPriority.HIGH,
     },
-    trigger: null, // null = show immediately
+    trigger: null,
   });
 
   console.log("[NOTIF] 📳 Storage warning notification shown");
 };
 
-// ─── Clear badge count ───
 export const clearBadge = async (): Promise<void> => {
   await Notifications.setBadgeCountAsync(0);
 };
 
-// ─── Initialize everything ───
 export const initializeNotifications = async (): Promise<void> => {
   const granted = await requestNotificationPermissions();
   if (granted) {
@@ -228,6 +218,4 @@ export const initializeNotifications = async (): Promise<void> => {
   }
 };
 
-// Keep this as a no-op for API compatibility with Settings.tsx
-// Now we use saveNotificationPreferences directly instead
 export const updateNotificationPreferences = saveNotificationPreferences;

@@ -3,9 +3,6 @@ import { fetchWithTimeout } from "./client";
 import { ApiResponse, MotionConfig, MotionConfigResponse } from "./types";
 
 export const motionApi = {
-  /**
-   * Get motion detection configuration
-   */
   getConfig: async (): Promise<MotionConfigResponse> => {
     try {
       const response = await fetchWithTimeout(
@@ -24,9 +21,6 @@ export const motionApi = {
     }
   },
 
-  /**
-   * Start motion detection
-   */
   start: async (): Promise<ApiResponse> => {
     try {
       const response = await fetchWithTimeout(
@@ -45,9 +39,6 @@ export const motionApi = {
     }
   },
 
-  /**
-   * Stop motion detection
-   */
   stop: async (): Promise<ApiResponse> => {
     try {
       const response = await fetchWithTimeout(
@@ -66,9 +57,6 @@ export const motionApi = {
     }
   },
 
-  /**
-   * Update motion detection configuration
-   */
   updateConfig: async (config: Partial<MotionConfig>): Promise<ApiResponse> => {
     try {
       const response = await fetchWithTimeout(

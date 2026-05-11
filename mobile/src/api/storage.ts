@@ -8,9 +8,6 @@ import {
 } from "./types";
 
 export const storageApi = {
-  /**
-   * Get current storage status
-   */
   getStatus: async (): Promise<StorageStatusResponse> => {
     try {
       const response = await fetchWithTimeout(
@@ -28,9 +25,6 @@ export const storageApi = {
     }
   },
 
-  /**
-   * Get storage configuration
-   */
   getConfig: async (): Promise<StorageConfigResponse> => {
     try {
       const response = await fetchWithTimeout(
@@ -44,9 +38,6 @@ export const storageApi = {
     }
   },
 
-  /**
-   * Update storage configuration
-   */
   updateConfig: async (
     config: Partial<StorageConfig>,
   ): Promise<StorageConfigResponse> => {

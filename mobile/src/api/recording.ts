@@ -3,9 +3,6 @@ import { fetchWithTimeout, handleApiError } from "./client";
 import { ApiResponse } from "./types";
 
 export const recordingApi = {
-  /**
-   * Start manual recording
-   */
   start: async (): Promise<ApiResponse> => {
     try {
       console.log("🔴 Calling start recording API...");
@@ -31,9 +28,6 @@ export const recordingApi = {
     }
   },
 
-  /**
-   * Stop manual recording
-   */
   stop: async (): Promise<ApiResponse> => {
     try {
       console.log("⏹ Calling stop recording API...");
@@ -59,9 +53,6 @@ export const recordingApi = {
     }
   },
 
-  /**
-   * Start 24/7 recording mode
-   */
   start247: async (): Promise<ApiResponse> => {
     try {
       const response = await fetchWithTimeout(
@@ -75,9 +66,6 @@ export const recordingApi = {
     }
   },
 
-  /**
-   * Stop 24/7 recording mode
-   */
   stop247: async (): Promise<ApiResponse> => {
     try {
       const response = await fetchWithTimeout(

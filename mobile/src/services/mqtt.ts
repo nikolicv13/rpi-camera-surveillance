@@ -137,7 +137,7 @@ class MQTTService {
   private notifyMessageReceived(topic: Topic, message: MQTTMessage) {
     try {
       if (topic === TOPICS.MOTION) {
-        // Fire immediately, don't await - we don't want to block message delivery
+        // Fire immediately
         showMotionNotification().catch((e) =>
           console.warn("[MQTT] Motion notification failed:", e),
         );

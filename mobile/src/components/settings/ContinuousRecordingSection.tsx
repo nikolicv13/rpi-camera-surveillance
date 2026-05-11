@@ -11,7 +11,7 @@ interface Props {
 export function ContinuousRecordingSection({ settings, onToggle }: Props) {
   return (
     <View style={styles.section}>
-      <Text style={styles.sectionTitle}>🕒 Continuous Recording</Text>
+      <Text style={styles.sectionTitle}>Continuous Recording</Text>
 
       <SettingRow
         label="Enable 24/7 Recording"

@@ -122,7 +122,6 @@ export function useSettings() {
   const saveSettings = async () => {
     setSaving(true);
     try {
-      // 👇 Handle motion detection state FIRST
       const currentMotionStatus = await CameraAPI.getMotionConfig();
       const isCurrentlyDetecting =
         currentMotionStatus.state?.detecting ?? false;

@@ -19,7 +19,6 @@ import Settings from "./Settings";
 
 interface Props {
   mqttConnected: boolean;
-  // 👇 Accept status and setStatus as props
   status: CameraStatus | null;
   setStatus: React.Dispatch<React.SetStateAction<CameraStatus | null>>;
 }
@@ -43,7 +42,7 @@ export default function LiveScreen({
   // HTTP Polling (fallback when MQTT not connected)
   const fetchStatus = async () => {
     if (streamLogic.apiInProgress.current) return;
-    if (mqttConnected) return; // Skip if MQTT is handling updates
+    if (mqttConnected) return;
 
     const result = await CameraAPI.getStatus();
     if (result.success && result.data) {
@@ -93,10 +92,8 @@ export default function LiveScreen({
             onRefresh={streamLogic.retryConnection}
           />
 
-          {/* 👇 Show info banner when 24/7 is active */}
           {status?.is_247_recording_active && <InfoBanner />}
 
-          {/* 👇 Show status card when status exists */}
           {status && <StatusCard status={status} />}
         </ScrollView>
       )}

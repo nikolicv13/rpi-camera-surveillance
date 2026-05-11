@@ -90,7 +90,6 @@ export function useGallery(): GalleryState & GalleryActions {
   };
 
   return {
-    // State
     subTab,
     snapshots,
     videos,
@@ -99,7 +98,6 @@ export function useGallery(): GalleryState & GalleryActions {
     selectedImage,
     selectedVideo,
 
-    // Actions
     setSubTab,
     fetchFiles,
     onRefresh,

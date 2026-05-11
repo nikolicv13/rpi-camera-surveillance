@@ -27,12 +27,11 @@ LogBox.ignoreLogs([
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<TabName>("live");
-  // 👇 THIS status state will be shared with LiveScreen
   const [status, setStatus] = useState<CameraStatus | null>(null);
 
   const { mqttConnected } = useMqttIntegration({
     cameraIp: CAMERA_IP,
-    setStatus, // 👈 MQTT updates this state
+    setStatus,
   });
 
   // Notification setup
@@ -77,7 +76,6 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <View style={styles.container}>
-        {/* 👇 Pass status and setStatus as props */}
         {activeTab === "live" && (
           <LiveScreen
             mqttConnected={mqttConnected}

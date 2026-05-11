@@ -17,7 +17,7 @@ export function VideoQualitySection({ settings, updateSetting }: Props) {
 
   return (
     <View style={styles.section}>
-      <Text style={styles.sectionTitle}>🎥 Video Quality</Text>
+      <Text style={styles.sectionTitle}>Video Quality</Text>
 
       {/* Warning Banner */}
       <View style={styles.warningBanner}>

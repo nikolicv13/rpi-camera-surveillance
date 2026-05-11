@@ -3,9 +3,6 @@ import { fetchWithTimeout } from "./client";
 import { FileListResponse, ApiResponse } from "./types";
 
 export const filesApi = {
-  /**
-   * List all snapshots
-   */
   listSnapshots: async (): Promise<FileListResponse> => {
     try {
       const response = await fetchWithTimeout(
@@ -20,9 +17,6 @@ export const filesApi = {
     }
   },
 
-  /**
-   * List all videos
-   */
   listVideos: async (): Promise<FileListResponse> => {
     try {
       const response = await fetchWithTimeout(
@@ -37,23 +31,14 @@ export const filesApi = {
     }
   },
 
-  /**
-   * Get snapshot URL
-   */
   getSnapshotUrl: (filename: string): string => {
     return `${API_BASE_URL}/api/files/snapshot/${filename}`;
   },
 
-  /**
-   * Get video URL
-   */
   getVideoUrl: (path: string): string => {
     return `${API_BASE_URL}/api/files/video/${path}`;
   },
 
-  /**
-   * Delete a snapshot
-   */
   deleteSnapshot: async (filename: string): Promise<ApiResponse> => {
     try {
       const response = await fetchWithTimeout(
@@ -68,9 +53,6 @@ export const filesApi = {
     }
   },
 
-  /**
-   * Delete a video
-   */
   deleteVideo: async (path: string): Promise<ApiResponse> => {
     try {
       const response = await fetchWithTimeout(

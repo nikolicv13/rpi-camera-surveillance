@@ -20,7 +20,7 @@ export function StorageSection({ settings, updateSetting }: Props) {
 
   return (
     <View style={styles.section}>
-      <Text style={styles.sectionTitle}>💾 Storage Management</Text>
+      <Text style={styles.sectionTitle}>Storage Management</Text>
 
       {/* Auto-Delete Toggle */}
       <SettingRow

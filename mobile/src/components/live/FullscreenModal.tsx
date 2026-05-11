@@ -28,7 +28,12 @@ export function FullscreenModal({
   onClose,
 }: Props) {
   return (
-    <Modal visible={visible} animationType="fade" onRequestClose={onClose}>
+    <Modal
+      visible={visible}
+      animationType="fade"
+      onRequestClose={onClose}
+      statusBarTranslucent={true}
+    >
       <View style={styles.fullscreenContainer}>
         <StatusBar hidden />
 

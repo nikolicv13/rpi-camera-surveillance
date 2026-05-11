@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 interface Props {
   photoCount: number;
@@ -8,12 +9,12 @@ interface Props {
 
 export function GalleryHeader({ photoCount, videoCount }: Props) {
   return (
-    <View style={styles.header}>
+    <SafeAreaView style={styles.header}>
       <Text style={styles.title}>Gallery</Text>
       <Text style={styles.subtitle}>
         {photoCount} photos • {videoCount} videos
       </Text>
-    </View>
+    </SafeAreaView>
   );
 }
 

@@ -11,7 +11,7 @@ interface Props {
 export function NotificationsSection({ settings, updateSetting }: Props) {
   return (
     <View style={styles.section}>
-      <Text style={styles.sectionTitle}>🔔 Notifications</Text>
+      <Text style={styles.sectionTitle}>Notifications</Text>
 
       {/* Motion Alerts */}
       <SettingRow
