@@ -220,3 +220,8 @@ This project implements a complete camera surveillance solution using a Raspberr
 
 
 
+## Future Improvements
++ **AI Object Detection**: Integrate TensorFlow Lite / YOLO to distinguish between humans, animals, and vehicles (reducing false alarms).
++ **Cloud Backup**: Automatically upload critical motion recordings to AWS S3, Google Cloud, or Firebase.
++ **Multi-Camera Support**: Manage multiple Raspberry Pi cameras from a single mobile app.
++ **Two-Way Audio**: Add microphone and speaker support to communicate through the app.
