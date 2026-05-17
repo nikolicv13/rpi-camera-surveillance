@@ -7,8 +7,10 @@
 <img src="/docs/screenshots/settings-1.png" width="300" />
 <img src="/docs/screenshots/settings-2.png" width="300" />
 
-### 🖥️ Live View & Fullscreen
+### 🖥️ Live View 
 <img src="/docs/screenshots/liveView.png" width="300" />
+
+### Fullscreen
 <img src="/docs/screenshots/fullscreenOption.png" width="300" />
 
 ### 📁 Gallery
