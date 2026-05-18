@@ -293,7 +293,7 @@ class CameraSystem:
 
             # Stop the current recording segment
             print("[REC 24/7] Segment duration reached. Stopping and restarting...")
-            self.stop_recording() # This will automatically call _stop_recording_internal
+            self.stop_recording() 
             
             # Small delay to ensure file handles are closed before starting the next one
             time.sleep(5)

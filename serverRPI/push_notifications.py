@@ -129,7 +129,7 @@ class PushNotificationManager:
                 if result.get('data', {}).get('status') == 'error':
                     error_msg = result.get('data', {}).get('message', 'Unknown error')
                     print(f"[PUSH] ❌ Expo error: {error_msg}")
-                    # If the token is invalid, clear it
+                    
                     if 'DeviceNotRegistered' in error_msg:
                         print("[PUSH] Token is no longer valid, clearing.")
                         self.token = None

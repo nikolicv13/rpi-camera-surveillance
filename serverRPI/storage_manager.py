@@ -15,7 +15,7 @@ class StorageManager:
         'auto_delete_enabled': False,
         'max_days': 14,
         'max_gb': 10,
-        'check_interval_hours': 6.0, # How often to run the cleanup job 6
+        'check_interval_hours': 6.0, # How often to run the cleanup job 
         'warning_threshold_pct': 85.0,
     }
 
@@ -28,7 +28,7 @@ class StorageManager:
         self._is_running = False
         self._lock = threading.RLock()
 
-       # self._low_storage_warning_sent = False 
+       
         
 
     def _load_config(self):
@@ -65,7 +65,7 @@ class StorageManager:
                     except (ValueError, TypeError):
                         print(f"[STORAGE] Warning: Could not set {key} to {value}")
             
-            # 👇 FIX 3: Save to file immediately upon update
+           
             self._save_config()
 
             if self.config['auto_delete_enabled'] and not self._is_running:
@@ -111,9 +111,7 @@ class StorageManager:
             try:
                 print("[STORAGE] 🧹 Running scheduled cleanup...")
 
-                # ─────────────────────────────────────────────────────────────
-                # 1. CHECK STORAGE + SEND WARNING VIA MQTT (SVAKI PUT)
-                # ─────────────────────────────────────────────────────────────
+                
                 try:
                     usage = self.get_status()
                     used_percentage = usage.get('used_pct', 0)
@@ -121,7 +119,7 @@ class StorageManager:
                     
                     #WARNING_THRESHOLD_PCT = 85.0  # Threshold za upozorenje
                     WARNING_THRESHOLD_PCT = self.config.get('warning_threshold_pct', 85.0)
-                    # 🔴 UVEK ŠALJI NOTIFIKACIJU ako je usage >= threshold
+                    #  UVEK ŠALJI NOTIFIKACIJU ako je usage >= threshold
                     if used_percentage >= WARNING_THRESHOLD_PCT:
                         print(f"[STORAGE] ⚠️ Low storage warning! Usage: {used_percentage}%")
                         
@@ -143,17 +141,13 @@ class StorageManager:
                 except Exception as e:
                     print(f"[STORAGE] ❌ Error during notification check: {e}")
 
-                # ─────────────────────────────────────────────────────────────
-                # 2. RUN CLEANUP (delete old files)
-                # ─────────────────────────────────────────────────────────────
+                
                 self._run_cleanup_logic()
 
             except Exception as e:
                 print(f"[STORAGE] ❌ Error during cleanup: {e}")
 
-            # ─────────────────────────────────────────────────────────────
-            # 3. WAIT LOOP (safe stop)
-            # ─────────────────────────────────────────────────────────────
+           
             wait_seconds = self.config['check_interval_hours'] * 3600
 
             for _ in range(int(wait_seconds)):
